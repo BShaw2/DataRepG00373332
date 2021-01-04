@@ -1,22 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { GlobalData } from './components/GlobalData';
 
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
-        <h1>hello</h1>
-        <Button variant="primary" size="lg" block>Global Covid Data</Button>
-        <br></br>
-        <Button variant="primary" size="lg" block>Country Specific Data</Button>
-        <br></br>
-        <Button variant="primary" size="lg" block>Edit Countries</Button>
-        <br></br>
-        <Button variant="primary" size="lg" block>View Countries</Button>
+        <Navbar bg="dark" variant="dark">
+          <Nav className="mr-auto">
+            <Nav.Link href="/globaldata">GlobalData</Nav.Link>
+            <Nav.Link href="/home">Country Specific Data</Nav.Link>
+            <Nav.Link href="/editcountries">Edit Countries</Nav.Link>
+            <Nav.Link href="/viewcountries">View Countries</Nav.Link>
+          </Nav>
+        </Navbar>
+
+        <Switch>
+          <Route path='/globaldata' component={GlobalData} exact />
+        </Switch>
+
       </div>
+      </Router>
     );
   }
 }

@@ -5,6 +5,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { GlobalData } from './components/GlobalData';
 import { CountryData } from './components/CountryData';
+import { Countries } from './components/Countries';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
         <Switch>
           <Route path='/globaldata' component={GlobalData} exact />
           <Route path='/home' component={CountryData} exact />
+          <Route path='/editcountries' component={Countries} exact />
         </Switch>
 
       </div>

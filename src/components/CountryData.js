@@ -34,11 +34,11 @@ export class CountryData extends React.Component {
             .then(
                 (response) => {
                     this.setState({ global: response.data })
-                    alert("Country name: " + this.state.global.country);
                     this.state.Flag = this.state.global.countryInfo.flag
                 })
             .catch((error) => {
                 console.log(error)
+                alert("Invalid country code");
             }
             );
 
@@ -72,6 +72,10 @@ export class CountryData extends React.Component {
                                 Total cases: {this.state.global.cases}
                                 <br></br>
                                 Today's cases: {this.state.global.todayCases}
+                                <br></br>
+                                Total deaths: {this.state.global.deaths}
+                                <br></br>
+                                Today's deaths: {this.state.global.todayDeaths}
                             </Card.Text>
                         </Card.Body>
                     </Card>

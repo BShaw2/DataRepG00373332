@@ -16,12 +16,13 @@ res.header("Access-Control-Allow-Origin", "*");
 res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
 res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
 res.header('Access-Control-Max-Age: 1728000');
-res.header("Content-Type: text/plain");
+//res.header("Content-Type: text/plain");
 next();
 });
 
 //Can not get this working, tried for ages, rechecked my previous labs where it also worked but apparently it stopped
 const myConnectionString = 'mongodb+srv://admin:root@cluster0.l0m4i.mongodb.net/countries?retryWrites=true&w=majority';
+//const myConnectionString = 'mongodb://admin:root@cluster0-shard-00-00.l0m4i.mongodb.net:27017,cluster0-shard-00-01.l0m4i.mongodb.net:27017,cluster0-shard-00-02.l0m4i.mongodb.net:27017/countries?ssl=true&replicaSet=atlas-rril4i-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(myConnectionString, {useNewUrlParser: true})
 
 const Schema = mongoose.Schema;

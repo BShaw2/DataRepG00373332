@@ -41,8 +41,8 @@ export class GlobalData extends React.Component {
 
     render() {
         return (
-            <div>
-                <Card className = "bg-danger text-center">
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Card className = "bg-danger text-center" style={{ width: '18rem' }}>
                     <Card.Header>Current worldwide cases</Card.Header>
                     <ListGroup variant="flush">
                         <ListGroup.Item >Total Cases - {this.state.global.cases}</ListGroup.Item>
